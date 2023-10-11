@@ -17,10 +17,9 @@ def index():
                 </head>
                 <body>
                     <h1>I know what you typed</h1>
-
                     <form method="get" action="/">
-                    <input type="text" name="get" placeholder="Type something">
-                    <input type="submit" value="Submit">
+                        <input type="text" name="get" placeholder="Type something">
+                        <input type="submit" value="Submit">
                     </form>
                 
                     <h3>%s</h3>
@@ -40,8 +39,8 @@ def index():
                     <h1>I know what you typed</h1>
 
                     <form method="get" action="/">
-                    <input type="text" name="get" placeholder="Type something">
-                    <input type="submit" value="Submit">
+                        <input type="text" name="get" placeholder="Type something">
+                        <input type="submit" value="Submit">
                     </form>
                 
                     <h3>%s</h3>
