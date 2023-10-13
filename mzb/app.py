@@ -1,6 +1,6 @@
 from flask import *
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
 flag = "2023GSM{_Th1S_S1t3'S_FE_w@S_m@D3_by_G@0n_}"
 
@@ -10,30 +10,25 @@ def index():
         data = request.json
         money = data.get('money', 0)
         print(money)
+        print(data)
         
-        if money == 0:
-            rt =  redirect(url_for('flag'))
-            return rt
+        if money >= 50000:
+            return {'redirectUri': '''/2023GSM{_Th1S_S1t3'S_FE_w@S_m@D3_by_G@0n_}'''}
         else:
             rt = render_template('index.html')
-        
+            
     else:
         rt = render_template('index.html')
-
     return rt
 
 
-@app.route('/2023GSM{_Th1S_S1t3_FE_w@S_m@D3_by_G@0n_}', methods = ['GET'])
-def flag():
-    return render_template('flag.html')
+# @app.route('/2023GSM{_Th1S_S1t3_FE_w@S_m@D3_by_G@0n_}', methods = ['GET'])
+# def flag():
+#     return render_template('flag.html')
 
-@app.route('/test')
+@app.route('''/2023GSM{_Th1S_S1t3'S_FE_w@S_m@D3_by_G@0n_}''')
 def test():
-    if True:
-        rt = redirect(url_for('flag'))
-    else:
-        rt = redirect(url_for('flag'))
-    return rt
+    return render_template('''2023GSM{_Th1S_S1t3'S_FE_w@S_m@D3_by_G@0n_}.html''')
 
 
 
